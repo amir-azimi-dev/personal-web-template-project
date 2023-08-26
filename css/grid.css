@@ -1,14 +1,3 @@
-:root {
-    /* colors  */
-    --text-color: #333;
-    --shadow-color: #14b5ff3d;
-    --bg-primary: #fff;
-    --bg-secondary: ##fff;
-
-    /* fonts */
-    
-}
-
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -18,6 +7,8 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    padding: 0;
+    margin: 0;
 }
 
 

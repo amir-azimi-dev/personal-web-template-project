@@ -2,10 +2,194 @@
 @import url(grid.css);
 @import url(fonts.css);
 
+:root {
+    /* colors  */
+    --primary-color: #0ABEAD;
+
+    /* dark/light mode colors */
+    --text-color: #333;
+    --bg-body-color: #fff;
+    --bg-section-color: #fff;
+
+    /* fonts */
+    --regular-font: "Poppins", Arial, Helvetica, sans-serif;
+    --medium-font: "Poppins Medium", Arial, Helvetica, sans-serif;
+    --semiBold-font: "Poppins Semibold", Arial, Helvetica, sans-serif;
+    --bold-font: "Poppins Bold", Arial, Helvetica, sans-serif;
+    --black-font: "Poppins Black", Arial, Helvetica, sans-serif;
+
+    /* transitions */
+    --linear-transition: all 0.15s linear;
+}
+
+/* custom reset start */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* custom reset end */
+
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--regular-font);
     font-size: 1.6rem;
     line-height: 1.3
 }
 
-@import url(responsive.css);
+
+/*===================== header start =====================*/
+
+.header {
+    background-color: var(--bg-body-color);
+    box-shadow: 0rem 0.5rem 1rem 0.1rem rgba(4, 195, 255, 0.16);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10rem;
+    position: relative;
+    z-index: 10;
+}
+
+.nav--minimized {
+    height: 6rem;
+}
+
+.nav__logo {
+    font-size: 4.5rem;
+}
+
+.nav__logo-link {
+    color: var(--primary-color);
+    font-family: var(--black-font);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 101%;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: var(--bg-section-color);
+    font-family: var(--medium-font);
+    transition: var(--linear-transition);
+}
+
+.menu--visible {
+    height: 30.8rem;
+}
+
+.cover {
+    visibility: hidden;
+    opacity: 0;
+    content: " ";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #23232349;
+    transition: var(--linear-transition);
+}
+
+.cover--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__item {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.menu__item:first-child {
+    margin-top: 2rem;
+}
+
+.menu__link {
+    display: block;
+    color: var(--text-color);
+    transition: var(--linear-transition);
+    width: 100%;
+}
+
+.menu__link:hover,
+.menu__link--active {
+    color: var(--primary-color);
+}
+
+.nav__hamburger-btn {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav__hamburger-line {
+    display: block;
+    position: relative;
+}
+
+.nav__hamburger-line,
+.nav__hamburger-line::before,
+.nav__hamburger-line::after {
+    content: " ";
+    width: 3.5rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    transition: var(--linear-transition);
+}
+
+.nav__hamburger-line::before {
+    position: absolute;
+    top: 0.9rem;
+}
+
+.nav__hamburger-line::after {
+    position: absolute;
+    top: -0.9rem;
+}
+
+.nav__hamburger-btn--open .nav__hamburger-line  {
+    background: transparent;
+}
+.nav__hamburger-btn--open .nav__hamburger-line::before  {
+    top: 0;
+    transform: rotate(45deg);
+}
+.nav__hamburger-btn--open .nav__hamburger-line::after  {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/*===================== header end =====================*/
+
+/*===================== main start =====================*/
+/*===================== hero start =====================*/
+
+/*===================== hero end =====================*/
+
+
+
+
+/*===================== x start =====================*/
+/*===================== x start =====================*/
+/*===================== x start =====================*/
+/*===================== x start =====================*/
+/*===================== x start =====================*/
+/*===================== main end =====================*/
