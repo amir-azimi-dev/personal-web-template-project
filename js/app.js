@@ -19,3 +19,9 @@ window.onscroll = () => {
 
     nav.classList.remove("nav--minimized");
 };
+
+window.scrollTo({
+    left: 0,
+    top: window.scrollY,
+    behavior: "smooth"
+});

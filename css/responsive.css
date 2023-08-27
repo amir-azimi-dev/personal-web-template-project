@@ -1,8 +1,48 @@
-@media all and (min-width: 576px) {}
+@media all and (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+
+    .btn {
+        width: 15rem;
+        height: 4.7rem;
+        font-size: 1.4rem;
+        line-height: 4.7rem;
+    }
+
+    /* hero */
+    .hero__img {
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .hero__job {
+        font-size: 3.4rem;
+    }
+
+    .hero__links {
+        gap: 1rem;
+    }
+}
+
+@media all and (min-width: 576px) {
+
+    /* hero */
+    .hero__img {
+        width: 35vw;
+        height: 35vw;
+        min-width: 33vh;
+        min-height: 33vh;
+    }
+}
 
 @media all and (min-width: 768px) {
 
     /* header */
+    .nav__logo {
+        font-size: 5rem;
+    }
+
     .menu {
         height: unset;
         position: static;
@@ -28,10 +68,49 @@
     .nav__hamburger-btn {
         display: none;
     }
+
+    /* hero */
+    .hero__img {
+        width: 25rem;
+        height: 25rem;
+    }
 }
 
-@media all and (min-width: 992px) {}
+@media all and (min-width: 992px) {
+    .btn {
+        width: 16rem;
+        height: 4.8rem;
+        font-size: 1.6rem;
+        line-height: 4.8rem;
+    }
 
-@media all and (min-width: 1200px) {}
+    /* hero */
+    .hero__img {
+        width: 55vh;
+        height: 55vh;
+        margin: 0 0 0 auto;
+        border-width: 1.5rem;
+    }
 
-@media all and (min-width: 1400px) {}
+    .hero__content {
+        text-align: left;
+    }
+
+    .hero__name {
+        font-size: 3rem;
+    }
+
+    .hero__job {
+        font-size: 4.5rem;
+    }
+
+    .hero__links {
+        justify-content: start;
+    }
+}
+
+@media all and (min-width: 1200px) {
+}
+
+@media all and (min-width: 1400px) {
+}

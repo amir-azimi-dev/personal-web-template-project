@@ -5,6 +5,7 @@
 :root {
     /* colors  */
     --primary-color: #0ABEAD;
+    --secondary-color: #F57F17;
 
     /* dark/light mode colors */
     --text-color: #333;
@@ -36,19 +37,65 @@ ul {
 body {
     font-family: var(--regular-font);
     font-size: 1.6rem;
-    line-height: 1.3
+    line-height: 1.3;
+    color: var(--text-color);
+    background-color: var(--bg-body-color);
+    overflow-x: hidden;
+    position: relative;
 }
 
+/* components start */
+.btn {
+    display: block;
+    font-family: var(--semiBold-font);
+    color: #fff;
+    font-size: 1.3rem;
+    width: 13rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 2rem;
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    box-shadow: 0 1rem 3rem #0abeac3e;
+}
+
+.btn--secondary {
+    background-color: var(--secondary-color);
+    box-shadow: 0 1rem 3rem #f57f1752;
+}
+/* components end */
+
+/* helper class start */
+.align-items-center {
+    align-items: center;
+}
+
+.h-85 {
+    height: 85%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+/* helper class end */
 
 /*===================== header start =====================*/
 
 .header {
-    background-color: var(--bg-body-color);
-    box-shadow: 0rem 0.5rem 1rem 0.1rem rgba(4, 195, 255, 0.16);
+    box-shadow: 0 0.5rem 1rem 0.1rem rgba(4, 195, 255, 0.16);
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    background-color: var(--bg-section-color);
+    z-index: 100;
 }
 
 .nav {
@@ -57,7 +104,6 @@ body {
     align-items: center;
     height: 10rem;
     position: relative;
-    z-index: 10;
 }
 
 .nav--minimized {
@@ -65,7 +111,7 @@ body {
 }
 
 .nav__logo {
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
 .nav__logo-link {
@@ -94,7 +140,6 @@ body {
 .cover {
     visibility: hidden;
     opacity: 0;
-    content: " ";
     position: fixed;
     top: 0;
     left: 0;
@@ -102,6 +147,7 @@ body {
     height: 100%;
     background-color: #23232349;
     transition: var(--linear-transition);
+    z-index: 99;
 }
 
 .cover--active {
@@ -165,14 +211,16 @@ body {
     top: -0.9rem;
 }
 
-.nav__hamburger-btn--open .nav__hamburger-line  {
+.nav__hamburger-btn--open .nav__hamburger-line {
     background: transparent;
 }
-.nav__hamburger-btn--open .nav__hamburger-line::before  {
+
+.nav__hamburger-btn--open .nav__hamburger-line::before {
     top: 0;
     transform: rotate(45deg);
 }
-.nav__hamburger-btn--open .nav__hamburger-line::after  {
+
+.nav__hamburger-btn--open .nav__hamburger-line::after {
     top: 0;
     transform: rotate(-45deg);
 }
@@ -181,10 +229,83 @@ body {
 
 /*===================== main start =====================*/
 /*===================== hero start =====================*/
+.main {
+    position: relative;
+}
+
+.hero {
+    height: calc(100vh - 10rem);
+    position: relative;
+}
+
+.hero__img {
+    background: url("../assets/images/header-avatar.jpg") no-repeat center/cover;
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1rem solid var(--bg-section-color);
+    box-shadow: 0 0 4rem 0.1rem rgba(4, 195, 255, 0.16);
+    margin: 2rem auto;
+}
+
+.hero__content {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.hero__name {
+    font-family: var(--semiBold-font);
+    font-size: 2.4rem;
+    color: var(--primary-color);
+}
+
+.hero__name>span {
+    color: var(--secondary-color);
+}
+
+.hero__job {
+    font-family: var(--bold-font);
+    font-size: 4rem;
+    line-height: 1;
+    margin: 2rem 0;
+    color: var(--primary-color);
+}
+
+.hero__description {
+    margin-bottom: 3rem;
+    opacity: 0.71;
+}
+
+.hero__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero__hire-link {}
+
+.hero__resume-link {}
+
+
+
+.hero__shape-container {
+    position: absolute;
+    bottom: 0;
+    max-width: 100vw;
+    height: 15vh;
+    overflow: hidden;
+}
+
+.hero__shape {
+    width: 120vw;
+    height: 100%;
+    transform: translate(-10vw, 0);
+    object-fit: cover;
+}
+
 
 /*===================== hero end =====================*/
-
-
 
 
 /*===================== x start =====================*/
