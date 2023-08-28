@@ -13,7 +13,7 @@ navBtn.addEventListener("click", toggle);
 cover.addEventListener("click", toggle);
 
 window.onscroll = () => {
-    if (window.scrollY) {
+    if (window.scrollY > 300) {
         return nav.classList.add("nav--minimized");
     };
 
