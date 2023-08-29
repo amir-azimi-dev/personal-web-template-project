@@ -24,7 +24,6 @@ html {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
     width: 100%;
     margin: 0 auto;
 }
@@ -48,8 +47,8 @@ html {
 .col-11,
 .col-12 {
     /*flex-grow flex-shrink flex-basis*/
-    padding: 0 15px;
     flex: 0 0 auto;
+    padding: 0 15px;
 }
 
 .col-1 {

@@ -25,9 +25,29 @@
     }
 
     /* about */
-    .about > .container > .row {
+    .about__container {
         box-shadow: 0 0 2rem rgba(96, 233, 255, 0.27);
     }
+
+    /* resume */
+    .resume__item--active::after {
+        width: 100%;
+    }
+
+    .resume__content {
+        font-size: 1.6rem;
+    }
+
+    .resume__content-title {
+        font-size: 2rem;
+    }
+
+    .resume__content-badge {
+        width: 7rem;
+        height: 2.3rem;
+        font-size: 1.2rem;
+    }
+
 }
 
 @media all and (min-width: 576px) {
@@ -38,6 +58,20 @@
         height: 35vw;
         min-width: 33vh;
         min-height: 33vh;
+    }
+
+    /* resume */
+    .resume__content {
+        font-size: 1.6rem;
+    }
+
+    .resume__content-title {
+        font-size: 2rem;
+    }
+
+    .resume__content-badge {
+        width: 11rem;
+        height: 2.5rem;
     }
 }
 
@@ -55,6 +89,10 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
+    }
+
+    .nav--minimized {
+        padding-top: 0;
     }
 
     .cover--active::after {
@@ -78,6 +116,12 @@
     .hero__img {
         width: 25rem;
         height: 25rem;
+    }
+
+    /* services */
+    .service {
+        max-width: unset;
+        width: 100%;
     }
 }
 
@@ -119,20 +163,54 @@
     }
 
     /* about */
+    .about__container {
+        flex-direction: row;
+        width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+
     .about__img-container {
-        width: 100%;
+        width: 50%;
         min-height: 59rem;
-        height: 70vh;
-        margin-left: -15px;
     }
 
     .about__content {
+        width: 50%;
         padding: 0 2rem 0 3rem;
+    }
+
+    /* resume */
+
+    .resume__list {
+        height: 55vh;
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
+    .resume .overflow-y-auto {
+        height: 55vh;
+    }
+
+    .resume__item--active::after {
+        width: 100%;
+        /*width: 25rem;*/
     }
 }
 
 @media all and (min-width: 1200px) {
+    /* resume */
+    .resume__item--active::after {
+        width: 90%;
+    }
 }
 
 @media all and (min-width: 1400px) {
+    .container {
+        width: 1300px;
+    }
+
+    /* services */
+    .service__shape {
+        bottom: -4rem;
+    }
 }
