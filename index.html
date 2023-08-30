@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+
     <title>landing page</title>
 </head>
 
@@ -55,7 +61,7 @@
 
 <main class="main">
     <!-- hero start -->
-    <section class="hero" id="hero" >
+    <section class="hero" id="hero">
         <div class="container h-100">
             <div class="row h-85 align-items-center row-reverse">
                 <div class="col-12 col-lg-6">
@@ -384,11 +390,71 @@
     </section>
     <!-- resume end -->
 
+    <!-- portfolio start -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header">
+                        <h3 class="section-header__title">Portfolio</h3>
+                        <p class="section-header__caption">Check in Our Latest Works</p>
+                        <div class="section-header__shape"></div>
+                    </div>
+                    <ul class="portfolio__list">
+                        <li class="portfolio__item portfolio__item--active">All Works</li>
+                        <li class="portfolio__item">Illustration</li>
+                        <li class="portfolio__item">Animation</li>
+                        <li class="portfolio__item">App UI</li>
+                        <li class="portfolio__item">Web UI</li>
+                        <li class="portfolio__item">Social Media</li>
+                        <li class="portfolio__item">Print Design</li>
+                    </ul>
+                    <div class="portfolio__content">
+                        <!-- Slider main container -->
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <img src="assets/images/portfolio-1.jpg" alt="portfolio-slide"
+                                         class="swiper__slide-img">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/portfolio-2.jpg" alt="portfolio-slide"
+                                         class="swiper__slide-img">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/portfolio-3.jpg" alt="portfolio-slide"
+                                         class="swiper__slide-img">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/portfolio-2.jpg" alt="portfolio-slide"
+                                         class="swiper__slide-img">
+                                </div>
+                                <div>
+                                    <img src="assets/images/portfolio-1.jpg" alt="portfolio-slide"
+                                         class="swiper__slide-img">
+                                </div>
+                            </div>
+                            <!-- pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- portfolio end -->
 </main>
 
 
 <footer class="footer"></footer>
 
+<script src="js/swiper-bundle.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 

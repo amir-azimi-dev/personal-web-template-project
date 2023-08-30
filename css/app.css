@@ -648,7 +648,7 @@ body {
 .resume__content {
     font-size: 1.3rem;
     margin-bottom: 3rem;
-    animation: appear 0.2s;
+    animation: appear 1s;
 }
 
 .resume__content:last-child {
@@ -708,8 +708,97 @@ body {
 
 /*===================== resume end =====================*/
 
-/*===================== x start =====================*/
-/*===================== x end =====================*/
+/*===================== portfolio start =====================*/
+.portfolio {
+    padding: 6rem 0;
+    margin-top: 20rem;
+}
+
+.portfolio__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+.portfolio__item {
+    width: 12rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    transition: var(--linear-transition);
+}
+
+.portfolio__item:hover {
+    font-weight: bold;
+}
+
+.portfolio__item--active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.portfolio__content {
+    height: 100%;
+}
+
+.swiper {
+    width: 100%;
+    max-height: 75vh;
+    height: 70rem;
+    text-align: center;
+}
+
+.swiper-wrapper {
+    animation: appear 1s;
+}
+
+.swiper-slide {
+}
+
+.swiper__slide-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.swiper {
+    --add-bottom: 5.5rem;
+    padding-bottom: var(--add-bottom);
+}
+
+.swiper [class^="swiper-button-"] {
+    top: calc(50% - var(--add-bottom) / 2);
+}
+
+.swiper-pagination-bullet {
+    border: 0.4rem solid #BFBEBE;
+    background-color: #fff;
+    width: 2rem;
+    height: 2rem;
+}
+
+.swiper-pagination-bullet-active {
+    border-color: var(--primary-color);
+}
+
+.swiper-button-prev {
+    display: none;
+}
+
+.swiper-button-next {
+    display: none;
+}
+
+/*===================== portfolio end =====================*/
 
 /*===================== x start =====================*/
 /*===================== x end =====================*/

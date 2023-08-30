@@ -48,6 +48,11 @@
         font-size: 1.2rem;
     }
 
+    /* portfolio */
+    .swiper {
+        max-height: 70vh;
+    }
+
 }
 
 @media all and (min-width: 576px) {
@@ -193,7 +198,15 @@
 
     .resume__item--active::after {
         width: 100%;
-        /*width: 25rem;*/
+    }
+
+    /* portfolio */
+    .swiper-button-prev {
+        display: block;
+    }
+
+    .swiper-button-next {
+        display: block;
     }
 }
 
