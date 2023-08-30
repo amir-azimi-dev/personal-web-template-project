@@ -10,7 +10,7 @@ const portfolioContentContainer = document.querySelector(".portfolio .swiper-wra
 const portfolioTitles = document.querySelectorAll(".portfolio__item");
 
 // variables
-const sectionsIds = ["hero", "about", "services", "resume", "portfolio", "pricing", "contact"];
+const sectionsIds = ["hero", "about", "services", "resume", "portfolio", "pricing", "contactus"];
 let resumeTables = [
     [
         {
@@ -184,9 +184,6 @@ const swiper = new Swiper('.swiper', {
     },
 
     breakpoints: {
-        // 400: {
-        //     slidesPerView: 1.3
-        // },
         576: {
             slidesPerView: 1.3
         },
@@ -239,7 +236,6 @@ const scrollOnClick = (target, index) => {
 };
 
 const scrollHandler = () => {
-    console.log("scrolled")
     if (window.scrollY <= (getScrollY(1) - 60)) {
         return setActiveNavMenuLink(navMenuLinks[0])
     }

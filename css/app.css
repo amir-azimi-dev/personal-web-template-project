@@ -49,11 +49,11 @@ body {
     display: block;
     font-family: var(--semiBold-font);
     color: #fff;
-    font-size: 1.3rem;
-    width: 13rem;
-    height: 4rem;
+    font-size: 1.5rem;
+    width: 13.5rem;
+    height: 4.5rem;
     text-align: center;
-    line-height: 4rem;
+    line-height: 4.5rem;
     border-radius: 2rem;
 }
 
@@ -67,6 +67,29 @@ body {
     box-shadow: 0 1rem 3rem #f57f1752;
 }
 
+.bg--purple {
+    background-color: #8540FF;
+}
+
+.bg--yellow {
+    background-color: #FFC50C;
+}
+
+.bg--pink {
+    background-color: #EC407A;
+}
+
+.bg--orange {
+    background-color: #FF6331;
+}
+
+.bg--blue {
+    background-color: #13B6FF;
+}
+
+.bg--green {
+    background-color: #49AF46;
+}
 
 .section-header {
     text-align: center;
@@ -119,11 +142,11 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -100%;
-    right: -100%;
+    left: -200%;
+    right: -200%;
     box-shadow: 0 0 7rem rgba(96, 233, 255, 0.27);
-    transform: skew(20deg, -5deg) translateY(-5%);
-    height: 120%;
+    transform: skew(20deg, -5deg) translateY(-4vh);
+    height: calc(100% + 15vh);
     z-index: -1;
     background-color: var(--bg-section-color);
 }
@@ -133,6 +156,10 @@ body {
 /* helper class start */
 .align-items-center {
     align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
 }
 
 .h-85 {
@@ -505,32 +532,26 @@ body {
 }
 
 .service--purple {
-    background-color: #8540FF;
     box-shadow: 0 0 3rem 0.5rem rgba(118, 13, 255, 0.3);
 }
 
 .service--yellow {
-    background-color: #FFC50C;
     box-shadow: 0 0 3rem 0.5rem rgba(255, 197, 12, 0.3);
 }
 
 .service--pink {
-    background-color: #EC407A;
     box-shadow: 0 0 3rem 0.5rem rgba(236, 64, 122, 0.3);
 }
 
 .service--orange {
-    background-color: #FF6331;
     box-shadow: 0 0 3rem 0.5rem rgba(255, 99, 49, 0.3);
 }
 
 .service--blue {
-    background-color: #13B6FF;
     box-shadow: 0 0 3rem 0.5rem rgba(19, 182, 255, 0.3);
 }
 
 .service--green {
-    background-color: #49AF46;
     box-shadow: 0 0 3rem 0.5rem rgba(73, 175, 70, 0.3);
 }
 
@@ -800,6 +821,89 @@ body {
 
 /*===================== portfolio end =====================*/
 
-/*===================== x start =====================*/
-/*===================== x end =====================*/
+/*===================== pricing start =====================*/
+.pricing {
+    margin: 15rem 0 10rem;
+    padding: 3rem 0;
+}
+
+.pricing__plan {
+    max-width: 40rem;
+    width: 100%;
+    box-shadow: 0 0 3rem rgba(96, 233, 255, 0.27);
+    margin: 0 auto 5rem;
+}
+
+.pricing__header {
+    text-align: center;
+    padding: 4rem 0;
+    color: #fff;
+}
+
+.pricing__title {
+    font-family: var(--semiBold-font);
+    font-size: 3rem;
+}
+
+.pricing__price {
+    font-family: var(--semiBold-font);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.pricing__pricing__caption {
+
+}
+
+.pricing__content {
+    padding: 4rem 2rem;
+}
+
+.pricing__details-list {
+    width: 18rem;
+    margin: 0 auto;
+}
+
+.pricing__detail-item {
+    margin-bottom: 3rem;
+}
+
+.pricing__detail-icon {
+    font-weight: bolder;
+    margin-right: 1rem;
+}
+
+.pricing__link {
+    margin: 0 auto;
+    width: 18rem !important;
+    height: 5rem !important;
+    line-height: 5rem !important;
+}
+
+.pricing__link.bg--pink {
+    box-shadow: 0 0.3rem 1rem 0.1rem rgba(236, 64, 122, 0.3);
+}
+
+.pricing__link.bg--orange {
+    box-shadow: 0 0.3rem 1rem 0.1rem rgba(255, 99, 49, 0.3);
+}
+
+.pricing__link.bg--purple {
+    box-shadow: 0 0.3rem 1rem 0.1rem rgba(118, 13, 255, 0.3);
+}
+/*===================== pricing end =====================*/
 /*===================== main end =====================*/
+
+.contactus {
+    margin: 20rem 0;
+    padding: 6rem 0;
+}
+
+/*===================== contactus start =====================*/
+
+/*===================== contactus end =====================*/
+
+/*===================== footer start =====================*/
+
+
+/*===================== footer end =====================*/
