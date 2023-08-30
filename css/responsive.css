@@ -63,17 +63,7 @@
     }
 
     .contactus__input {
-        height: 4.5rem;
         font-size: 1.6rem;
-    }
-
-    textarea.contactus__input {
-        height: 9rem;
-    }
-
-    .contactus__btn {
-        height: 4.5rem !important;
-        line-height: 4.5rem !important;
     }
 }
 
@@ -233,6 +223,14 @@
 
     .swiper-button-next {
         display: block;
+    }
+
+    /* footer */
+    .footer__wrapper {
+        gap: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
