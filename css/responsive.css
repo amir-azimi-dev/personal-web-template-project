@@ -53,6 +53,28 @@
         max-height: 70vh;
     }
 
+    /* contactus */
+    .contactus__content {
+        padding: 2.4rem;
+    }
+
+    .contactus__form {
+        padding: 0;
+    }
+
+    .contactus__input {
+        height: 4.5rem;
+        font-size: 1.6rem;
+    }
+
+    textarea.contactus__input {
+        height: 9rem;
+    }
+
+    .contactus__btn {
+        height: 4.5rem !important;
+        line-height: 4.5rem !important;
+    }
 }
 
 @media all and (min-width: 576px) {
@@ -128,6 +150,11 @@
         max-width: unset;
         width: 100%;
     }
+
+    /* contactus */
+    .contactus__wrapper {
+        background-position: left;
+    }
 }
 
 @media all and (min-width: 992px) {
@@ -185,7 +212,6 @@
     }
 
     /* resume */
-
     .resume__list {
         height: 55vh;
         margin-bottom: 0;
@@ -211,10 +237,26 @@
 }
 
 @media all and (min-width: 1200px) {
+    /* header */
+    .nav--minimized {
+        height: 8rem;
+    }
+
     /* resume */
     .resume__item--active::after {
         width: 90%;
     }
+
+    /* contactus */
+    .contactus__wrapper {
+        background-position: center;
+    }
+
+    .contactus__content {
+        margin: 0 0 0 auto;
+        padding: 2.5rem 4rem;
+    }
+
 }
 
 @media all and (min-width: 1400px) {
