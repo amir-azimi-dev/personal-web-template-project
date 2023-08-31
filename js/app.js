@@ -4,13 +4,13 @@ const navBtn = document.querySelector(".nav__hamburger-btn");
 const menu = document.querySelector(".menu");
 const cover = document.querySelector(".cover");
 const nav = document.querySelector(".nav");
+const sections = document.querySelectorAll("main > section");
 const resumeContentContainer = document.querySelector(".resume__contents-container");
 const resumeTitles = document.querySelectorAll(".resume__item");
 const portfolioContentContainer = document.querySelector(".portfolio .swiper-wrapper");
 const portfolioTitles = document.querySelectorAll(".portfolio__item");
 
 // variables
-const sectionsIds = ["hero", "about", "services", "resume", "portfolio", "pricing", "contactus"];
 let resumeTables = [
     [
         {
@@ -194,7 +194,6 @@ const swiper = new Swiper('.swiper', {
 
         992: {
             slidesPerView: 2.4,
-            spaceBetween: 50
         },
         1200: {
             slidesPerView: 3
@@ -204,64 +203,59 @@ const swiper = new Swiper('.swiper', {
 
 
 // functions
-const minimizeNavbar = () => {
+const navbarHeightDeclare = () => {
     if (window.scrollY > 300) {
         return nav.classList.add("nav--minimized");
     }
     nav.classList.remove("nav--minimized");
 };
-const getElementByIndex = index => document.getElementById(sectionsIds[index]);
-
+const removeActiveClass = (activeClass) => {
+    document.querySelector(`.${activeClass}`).classList.remove(activeClass);
+};
+const getElementByIndex = index => sections[index];
 const getScrollY = index => {
     const activeSection = getElementByIndex(index);
-    return (activeSection.getBoundingClientRect().top + window.scrollY).toFixed(1);
-};
-
-const setActiveNavMenuLink = (target) => {
-    document.querySelector(".menu__link--active").classList.remove("menu__link--active");
-    target.classList.add("menu__link--active");
-};
-
-const scrollOnClick = (target, index) => {
-    const positionY = getScrollY(index);
-    if (positionY) {
-        window.scrollTo({
-            left: 0,
-            top: positionY - 60,
-            behavior: "smooth"
-        });
-    }
-
-    setActiveNavMenuLink(target);
-};
-
-const scrollHandler = () => {
-    if (window.scrollY <= (getScrollY(1) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[0])
-    }
-    if (window.scrollY <= (getScrollY(2) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[1])
-    }
-    if (window.scrollY <= (getScrollY(3) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[2])
-    }
-    if (window.scrollY <= (getScrollY(4) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[3])
-    }
-    if (window.scrollY <= (getScrollY(5) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[4])
-    }
-    if (window.scrollY <= (getScrollY(6) - 60)) {
-        return setActiveNavMenuLink(navMenuLinks[5])
-    }
-
-    return setActiveNavMenuLink(navMenuLinks[6])
+    return activeSection.offsetTop;
 };
 
 const toggleNavVisibility = () => {
     navBtn.classList.toggle("nav__hamburger-btn--open");
     menu.classList.toggle("menu--visible");
     cover.classList.toggle("cover--active");
+};
+
+const setActiveNavMenuLink = (target) => {
+    removeActiveClass("menu__link--active");
+    target.classList.add("menu__link--active");
+};
+
+const scrollOnClick = (target, index) => {
+    const positionY = getScrollY(index);
+    let top;
+    if (window.innerWidth < 400) {
+        top = (positionY - 40) > 0 ? (positionY - 40) : 0;
+    } else {
+        top = (positionY - 60) > 0 ? (positionY - 60) : 0;
+    }
+
+    window.scrollTo({
+        left: 0,
+        top,
+        behavior: "smooth"
+    });
+
+    setActiveNavMenuLink(target);
+};
+
+const setActiveTitle = (index, activeClass) => {
+    removeActiveClass(activeClass);
+
+    if (activeClass === "resume__item--active") {
+        resumeTitles[index].classList.add(activeClass);
+        return setResumeContent(index);
+    }
+    portfolioTitles[index].classList.add(activeClass);
+    setPortfolioContent(index);
 };
 
 const setResumeContent = (index) => {
@@ -295,32 +289,14 @@ const setPortfolioContent = (index) => {
     });
 
     portfolioContentContainer.innerHTML = '';
-    portfolioContentContainer.insertAdjacentHTML("beforeend" ,template);
+    portfolioContentContainer.insertAdjacentHTML("beforeend", template);
     swiper.update();
-    swiper.slideTo(1);
-};
-const setActiveTitle = (index, activeClass) => {
-    document.querySelector(`.${activeClass}`).classList.remove(activeClass);
-
-    if (activeClass === "resume__item--active") {
-        resumeTitles[index].classList.add(activeClass);
-        return setResumeContent(index);
-    }
-    portfolioTitles[index].classList.add(activeClass);
-    setPortfolioContent(index);
+    window.innerWidth < 576 ? swiper.slideTo(0) : swiper.slideTo(1);
 };
 
 // events
-window.scrollTo({
-    left: 0,
-    top: window.scrollY,
-    behavior: "smooth"
-});
-minimizeNavbar();
-window.addEventListener("scroll", () => {
-    scrollHandler();
-    minimizeNavbar();
-});
+navBtn.addEventListener("click", toggleNavVisibility);
+cover.addEventListener("click", toggleNavVisibility);
 navMenuLinks.forEach((navLink, index) => {
     navLink.addEventListener("click", event => {
         event.preventDefault();
@@ -330,13 +306,42 @@ navMenuLinks.forEach((navLink, index) => {
         scrollOnClick(event.target, index);
     });
 });
-navBtn.addEventListener("click", toggleNavVisibility);
-cover.addEventListener("click", toggleNavVisibility);
-setResumeContent(0);
+
 resumeTitles.forEach((item, index) => {
     item.addEventListener('click', () => setActiveTitle(index, "resume__item--active"));
 });
 portfolioTitles.forEach((item, index) => {
     item.addEventListener('click', () => setActiveTitle(index, "portfolio__item--active"));
 });
+
+window.addEventListener("scroll", navbarHeightDeclare);
+
+// start
+window.scrollTo({
+    left: 0,
+    top: window.scrollY,
+    behavior: "smooth"
+});
+navbarHeightDeclare();
+setResumeContent(0);
 setPortfolioContent(0);
+
+// intersection observer (scroll handler)
+const observerHandler = sections => {
+    sections.forEach(section => {
+        if (section.isIntersecting) {
+            const targetIndex = section.target.getAttribute("index");
+            setActiveNavMenuLink(navMenuLinks[targetIndex])
+        }
+    });
+};
+
+sections.forEach((section, index) => {
+    section.setAttribute("index", String(index));
+
+    const ratio = window.innerHeight / (section.offsetHeight * 2);
+    const threshold = (ratio < 1) ? ratio.toFixed(1) : 0.5;
+
+    const observer = new IntersectionObserver(observerHandler, {threshold})
+    observer.observe(section);
+});

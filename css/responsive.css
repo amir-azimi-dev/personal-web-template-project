@@ -54,10 +54,6 @@
     }
 
     /* contactus */
-    .contactus__content {
-        padding: 2.4rem;
-    }
-
     .contactus__form {
         padding: 0;
     }
@@ -96,7 +92,7 @@
 
     /* header */
     .nav__logo {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .menu {
@@ -156,8 +152,12 @@
     }
 
     /* header */
+    .nav__logo-link {
+        font-size: 5rem;
+    }
+
     .menu__link {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     /* hero */
@@ -198,7 +198,7 @@
 
     .about__content {
         width: 50%;
-        padding: 0 2rem 0 3rem;
+        padding: 0 3rem;
     }
 
     /* resume */
@@ -223,6 +223,11 @@
 
     .swiper-button-next {
         display: block;
+    }
+
+    /* contactus */
+    .contactus__content {
+        padding: 3rem;
     }
 
     /* footer */
@@ -252,7 +257,6 @@
 
     .contactus__content {
         margin: 0 0 0 auto;
-        padding: 2.5rem 4rem;
     }
 
 }
