@@ -63,6 +63,13 @@
     }
 }
 
+@media all and (max-width: 767px) {
+    * {
+        cursor: default !important;
+    }
+}
+
+
 @media all and (min-width: 576px) {
 
     /* hero */
@@ -102,6 +109,7 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
+        transition: none;
     }
 
     .nav--minimized {
@@ -217,12 +225,9 @@
     }
 
     /* portfolio */
-    .swiper-button-prev {
-        display: block;
-    }
-
+    .swiper-button-prev,
     .swiper-button-next {
-        display: block;
+        visibility: visible;
     }
 
     /* contactus */
